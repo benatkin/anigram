@@ -1,0 +1,52 @@
+# Steps
+
+* Set up sinatra project
+* Display text on canvas
+* Animate text along lines to new locations
+* Get text from url
+* Rotate text
+* Animate text along arcs
+* Deploy to Heroku
+
+# Sub-steps
+
+* Set up sinatra project
+  * Create directory
+  * Create html, css, and javascript files
+  * Link in jquery
+  * Link in raphael.js
+* Display text on canvas
+  * Learn to display monospace text on canvas
+  * Write function that figures out locations for text
+  * Write function that displays text
+  * Tweak
+* Animate text along lines to new locations
+  * Write function that outputs old positions and new positions for text
+  * Write function that animates text and moves onto the next one
+  * Call first function
+* Get text from url
+  * Un-hard-code and add a get method, and add the data to the template.
+* Rotate text
+  * Learn how to
+  * Do it
+* Animate text along arcs
+  * Learn how to do a basic arc with SVG
+  * Do a function that generates an arc, given two positions (counter-clockwise for left/down; clockwise for right)
+  * Animate along the path
+* Deploy to heroku
+  * Push latest version
+
+# Pomodoro Estimates per step
+
+* Set up sinatra project - 3
+* Display text on canvas - 3
+* Animate text along lines to new locations - 2
+* Get text from url - 1
+* Rotate text - 2
+* Animate text along arcs - 5
+* Deploy to Heroku - 1
+
+# Total time estimate
+
+* 17 pomodoros * 30 minutes + 4 long breaks * 30 minutes = 10.5 hours
+
