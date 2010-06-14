@@ -50,3 +50,13 @@
 
 * 17 pomodoros * 30 minutes + 4 long breaks * 30 minutes = 10.5 hours
 
+# Actual
+
+* Set up sinatra project - 1
+* Display text on canvas - 1
+* Animate text along lines to new locations - 2
+* Get text from url - 1
+* Rotate text - 
+
+
+
