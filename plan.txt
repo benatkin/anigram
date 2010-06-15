@@ -56,7 +56,9 @@
 * Display text on canvas - 1
 * Animate text along lines to new locations - 2
 * Get text from url - 1
-* Rotate text - 
+* Rotate text - 0
+* Animate text along arcs - 3
+* Deploy to Heroku - 1
 
 
 

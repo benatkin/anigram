@@ -1,8 +1,12 @@
 function anigram(phrase, anagram) {
   var letterSpacing = 35;
   var fontSize = '40px';
+  var leftMargin = 150;
+  var topMargin = 150;
+  var lineSpacing = 100;
+  var moveTime = 1000;
+  var highlightTime = 100;
 
-  // Creates canvas 320 × 200 at 10, 50
   var paper = Raphael(20, 20, 1000, 500);
 
   var remaining = anagram;
@@ -38,34 +42,30 @@ function anigram(phrase, anagram) {
     character = remaining[anagramPos];
     anagramLetter = findLetter(character);
     if (anagramLetter) {
-      anagramLetter.animate({'fill': '#f00'}, 100, moveLetter);
+      anagramLetter.animate({'fill': '#f00'}, highlightTime, moveLetter);
     }
   }
 
   function moveLetter() {
-    var x = 150 + letterSpacing * anagramPos;
-    var y = 250;
-    var rotation = anagramPos <= anagramLetter.pos ? -360 : 360;
-    //var path = 'M' + anagramLetter.origX + ',' + anagramLetter.origY + 'L' + x + ',' + y;
-    var along = makePath(anagramLetter.origX, anagramLetter.origY, x, y);
-    //paper.path(along);
+    var x = leftMargin + letterSpacing * anagramPos;
+    var y = topMargin + lineSpacing;
     var attrs = {
-      'rotation': rotation,
-      'along': along
+      'rotation': anagramPos <= anagramLetter.pos ? -360 : 360,
+      'along': makePath(anagramLetter.origX, anagramLetter.origY, x, y)
     }
-    anagramLetter.animate(attrs, 1000, unhighlightLetter);
+    anagramLetter.animate(attrs, moveTime, unhighlightLetter);
   }
 
   function unhighlightLetter() {
     anagramPos += 1;
     anagramLetter.moved = true;
-    anagramLetter.animate({'fill': '#000'}, 100, highlightLetter);
+    anagramLetter.animate({'fill': '#000'}, highlightTime, highlightLetter);
   }
 
   for (var i=0; i < characters.length; i++) {
     if (letter != ' ') {
-      var x = 250 + letterSpacing * i;
-      var y = 150;
+      var x = leftMargin + letterSpacing * i;
+      var y = topMargin;
       var letter = paper.text(x, y, characters[i]);
       letter.attr('font-family', 'Andale Mono, Courier New, courier, monospace');
       letter.attr('font-size', fontSize);
