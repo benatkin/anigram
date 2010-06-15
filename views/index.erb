@@ -14,20 +14,54 @@
       .appname {
         color: #000;
       }
+
+      .anagramForm {
+        font-size: 150%;
+      }
+
+      .anagramForm input {
+        font-size: 150%;
+      }
+
+      .anagramForm p {
+        text-align: left;
+        color: #000;
+      }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="/raphael.js"></script>
+    <script src="/jquery.overalls.min.js"></script>
     <script src="/app.js"></script>
     <script lang="javascript">
       $(function() {
         anigram("<%= @phrase %>", "<%= @anagram %>");
+        $('.go').live('click', function() {
+          var phraseInput = $('.phrase[value!=]');
+          var anagramInput = $('.anagram[value!=]');
+          if (phraseInput.length > 0 && anagramInput.length > 0) {
+            var phrase = phraseInput.val().replace(/ /g, '-');
+            var anagram = anagramInput.val().replace(/ /g, '-');
+            window.location.href = '/' + phrase + '/' + anagram;
+          }
+        });
+        $('.try').click(function() {
+          $.overalls($('#formWrap').html());
+        });
       });
     </script>
   </head>
   <body>
     <h1><span class="appname">Anigram</span></h1>
     <p>A weekend project by <a href="http://twitter.com/benatkin">@benatkin</a>.</p>
+    <p><a href="javascript:void(0)" class="try">Try another.</a></p>
     <p>Need ideas? Try the <a href="http://wordsmith.org/anagram/index.html">Internet Anagram Server</a>.</p>
     <p><a href="http://github.com/benatkin/anigram">Made</a> with <a href="http://raphaeljs.com/">raphael.js</a>.
+    <div id="formWrap" style="display: none">
+      <div class="anagramForm">
+        <p>Phrase: <input type="text" class="phrase" size="30" /></p>
+        <p>Anagram: <input type="text" class="anagram" size="30" /></p>
+        <p><input type="button" class="go" value="Go" /></p>
+      </div>
+    </div>
   </body>
 </html>
