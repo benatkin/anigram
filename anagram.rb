@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  redirect '/anagram-animation/a-giant-airman-moan', 307
+  redirect '/television-programming', 307
 end
 
 get %r{/([\w-]+)/([\w-]+).*} do
@@ -15,7 +15,7 @@ get %r{/([\w-]+).*} do
     'hashrocket' => 'hot hackers',
     'benjamin atkin' => 'beatnik ninja',
     'clenching thin topsoil' => 'linchpin technologist',
-    'amalgamated software' => 'wolfram damages a teat'
+    'television programming' => 'permeating living rooms'
   }[@phrase]
   erb :index
 end
