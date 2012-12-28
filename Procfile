@@ -1,1 +1,1 @@
-web: rackup -p $PORT
+web: thin -p $PORT -R config.ru start
