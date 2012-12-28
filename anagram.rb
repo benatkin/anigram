@@ -12,8 +12,8 @@ end
 get %r{/([\w-]+).*} do
   @phrase = params['captures'][0].tr('-', ' ')
   @anagram = {
-    'hashrocket' => 'hot hackers',
-    'benjamin atkin' => 'beatnik ninja',
+    'hashrocket'             => 'hot hackers',
+    'benjamin atkin'         => 'beatnik ninja',
     'clenching thin topsoil' => 'linchpin technologist',
     'television programming' => 'permeating living rooms'
   }[@phrase]
