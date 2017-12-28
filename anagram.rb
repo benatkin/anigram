@@ -14,7 +14,6 @@ get %r{/([\w-]+).*} do
   @anagram = {
     'hashrocket'             => 'hot hackers',
     'benjamin atkin'         => 'beatnik ninja',
-    'clenching thin topsoil' => 'linchpin technologist',
     'television programming' => 'permeating living rooms'
   }[@phrase]
   erb :index

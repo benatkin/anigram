@@ -1,4 +1,5 @@
-source :rubygems
+source 'https://rubygems.org'
+ruby '2.3.5'
 gem 'sinatra'
 gem 'rack'
 gem 'thin'
